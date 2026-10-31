@@ -1,0 +1,12 @@
+{
+  "nacional": [
+    {"titulo": "[EXEMPLO] Câmara da Figueira da Foz apresenta plano para a frente marítima", "link": "https://exemplo.pt/nacional/1", "resumo": "Notícia simulada para o modo local do agente.", "fonte": "RTP Notícias", "data": "2026-10-31T18:40:00+00:00"},
+    {"titulo": "[EXEMPLO] Nova linha de comboio entre Coimbra e a Figueira em estudo", "link": "https://exemplo.pt/nacional/2", "resumo": "Notícia simulada para o modo local do agente.", "fonte": "Público", "data": "2026-10-31T17:15:00+00:00"},
+    {"titulo": "[EXEMPLO] Previsão de chuva forte no litoral centro", "link": "https://exemplo.pt/nacional/3", "resumo": "Notícia simulada para o modo local do agente.", "fonte": "RTP Notícias", "data": "2026-10-31T15:05:00+00:00"},
+    {"titulo": "[EXEMPLO] Notícia de ontem que não deve aparecer", "link": "https://exemplo.pt/nacional/4", "resumo": "Serve para testar o filtro do dia.", "fonte": "Público", "data": "2026-10-30T09:00:00+00:00"}
+  ],
+  "internacional": [
+    {"titulo": "[EXEMPLO] Cimeira europeia discute energia e clima", "link": "https://exemplo.pt/mundo/1", "resumo": "Notícia simulada para o modo local do agente.", "fonte": "Público", "data": "2026-10-31T19:00:00+00:00"},
+    {"titulo": "[EXEMPLO] Agência espacial anuncia nova missão à Lua", "link": "https://exemplo.pt/mundo/2", "resumo": "Notícia simulada para o modo local do agente.", "fonte": "RTP Notícias", "data": "2026-10-31T16:30:00+00:00"}
+  ]
+}

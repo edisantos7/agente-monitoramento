@@ -1,0 +1,55 @@
+# Faz o jornal todas as manhãs e publica-o no GitHub Pages.
+# Também pode ser corrido à mão: separador Actions → "Jornal do dia" → Run workflow.
+name: Jornal do dia
+
+on:
+  schedule:
+    - cron: "30 6 * * *"  # 06:30 UTC = 06:30 em Lisboa no inverno, 07:30 no verão
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Nunca publicar duas edições ao mesmo tempo.
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  jornal:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.publicar.outputs.page_url }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+          cache: pip
+
+      - name: Instalar bibliotecas
+        run: pip install -r requirements.txt
+
+      - name: Correr os testes
+        run: python -m pytest -q
+
+      - name: Fazer o jornal
+        # --fonte api: se a internet falhar, é melhor não publicar do que publicar notícias de exemplo.
+        run: python -m agente --fonte api --sem-abrir --sem-resumos --pasta reports
+
+      - name: Preparar o site
+        run: |
+          mkdir _site
+          cp reports/jornal_*.html _site/index.html
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+      - name: Publicar
+        id: publicar
+        uses: actions/deploy-pages@v4

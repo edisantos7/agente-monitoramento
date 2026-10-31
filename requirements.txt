@@ -1,0 +1,8 @@
+# Pedidos HTTP à API de meteorologia e aos feeds RSS de notícias
+requests==2.32.5
+
+# Base de dados de fusos horários (o Windows não traz uma que o Python consiga usar)
+tzdata==2025.2
+
+# Testes automáticos (python -m pytest)
+pytest==8.4.2

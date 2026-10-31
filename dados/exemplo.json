@@ -1,0 +1,6 @@
+[
+  {"local": "Figueira da Foz", "temperatura": 18.2, "vento": 54.0, "humidade": 82.0, "hora": "2026-10-31T14:00"},
+  {"local": "Coimbra", "temperatura": 20.1, "vento": 14.5, "humidade": 65.0, "hora": "2026-10-31T14:00"},
+  {"local": "Lisboa", "temperatura": 22.4, "vento": 21.3, "humidade": 70.0, "hora": "2026-10-31T14:00"},
+  {"local": "Porto", "temperatura": 16.8, "vento": 18.0, "humidade": 96.0, "hora": "2026-10-31T14:00"}
+]

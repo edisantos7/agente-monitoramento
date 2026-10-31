@@ -1,0 +1,7 @@
+.venv/
+__pycache__/
+.pytest_cache/
+
+# Os relatórios e jornais gerados não vão para o git (a pasta fica, por causa do .gitkeep)
+reports/*.md
+reports/*.html

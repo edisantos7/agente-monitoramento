@@ -12,6 +12,7 @@ import sys
 import webbrowser
 from datetime import datetime
 from pathlib import Path
+from zoneinfo import ZoneInfo
 
 from . import config
 from .fontes import ErroFonte, ler_api, ler_ficheiro
@@ -75,7 +76,8 @@ def main(argumentos=None):
     for aviso in avisos:
         print(f"Aviso: feed sem resposta — {aviso}", file=sys.stderr)
 
-    agora = datetime.now()
+    # Sempre a hora de Lisboa, mesmo nos servidores do GitHub (que estão em UTC).
+    agora = datetime.now(ZoneInfo(config.FUSO_HORARIO))
     dados = dict(agora=agora, noticias=noticias, fonte_noticias=descricao_noticias, avisos=avisos)
 
     caminho_md = guardar(gerar_markdown(leituras, descricao, **dados), args.pasta, agora)
